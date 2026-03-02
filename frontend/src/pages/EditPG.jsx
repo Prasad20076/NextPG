@@ -18,7 +18,7 @@ function EditPG() {
   });
 
   useEffect(() => {
-    fetch(`${BASE_URL}/api/pgs/${id}`)
+    fetch(`${BASE_URL}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setFormData({
@@ -44,7 +44,7 @@ function EditPG() {
       photos: formData.photos ? [formData.photos] : []
     };
 
-    await fetch(`${BASE_URL}/api/pgs/${id}`, {
+    await fetch(`${BASE_URL}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
