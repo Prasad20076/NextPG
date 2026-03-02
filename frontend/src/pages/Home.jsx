@@ -30,7 +30,7 @@ function Home() {
   const handleDelete = async (id, e) => {
     e.stopPropagation();
     try {
-      await fetch(`${BASE_URL}/api/pgs/${id}`, {
+      await fetch(`${BASE_URL}/${id}`, {
         method: "DELETE",
       });
       setPgs((prev) => prev.filter((pg) => pg._id !== id));
