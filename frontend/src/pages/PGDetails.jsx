@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../services/api";
 
 function PGDetails() {
   const { id } = useParams();
@@ -7,7 +8,7 @@ function PGDetails() {
   const [pg, setPg] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/pgs/${id}`)
+    fetch(`${BASE_URL}/api/pgs/${id}`)
       .then((res) => res.json())
       .then((data) => setPg(data))
       .catch((err) => console.error(err));

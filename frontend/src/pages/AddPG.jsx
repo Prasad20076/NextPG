@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../services/api";
 
 function AddPG() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function AddPG() {
       photos: formData.photos ? [formData.photos] : []
     };
 
-    await fetch("http://localhost:3000/api/pgs", {
+    await fetch(`${BASE_URL}/api/pgs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

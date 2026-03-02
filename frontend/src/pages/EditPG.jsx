@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { BASE_URL } from "../services/api";
 
 function EditPG() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ function EditPG() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/pgs/${id}`)
+    fetch(`${BASE_URL}/api/pgs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setFormData({
@@ -43,7 +44,7 @@ function EditPG() {
       photos: formData.photos ? [formData.photos] : []
     };
 
-    await fetch(`http://localhost:3000/api/pgs/${id}`, {
+    await fetch(`${BASE_URL}/api/pgs/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

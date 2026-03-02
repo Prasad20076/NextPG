@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getPGs } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { getPGs, BASE_URL } from "../services/api";
+
 
 function Home() {
   const [pgs, setPgs] = useState([]);
@@ -29,7 +30,7 @@ function Home() {
   const handleDelete = async (id, e) => {
     e.stopPropagation();
     try {
-      await fetch(`http://localhost:3000/api/pgs/${id}`, {
+      await fetch(`${BASE_URL}/api/pgs/${id}`, {
         method: "DELETE",
       });
       setPgs((prev) => prev.filter((pg) => pg._id !== id));
