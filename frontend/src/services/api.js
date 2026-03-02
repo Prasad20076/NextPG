@@ -1,4 +1,4 @@
-export const BASE_URL = "https://nextpg-backend.onrender.com";
+export const BASE_URL = "https://nextpg-backend.onrender.com/api/pgs";
 
 
 // ==========================
