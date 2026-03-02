@@ -32,7 +32,7 @@ function AddPG() {
       photos: formData.photos ? [formData.photos] : []
     };
 
-    await fetch(`${BASE_URL}/api/pgs`, {
+    await fetch(BASE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

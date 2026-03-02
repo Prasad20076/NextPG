@@ -8,7 +8,7 @@ function PGDetails() {
   const [pg, setPg] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/api/pgs/${id}`)
+    fetch(`${BASE_URL}/${id}`)
       .then((res) => res.json())
       .then((data) => setPg(data))
       .catch((err) => console.error(err));
